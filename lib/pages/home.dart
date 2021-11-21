@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController _controller = TextEditingController();
   Color statusColor = Colors.white;
-  String availability = ". . .";
+  String statusText = ". . .";
 
   @override
   void dispose() {
@@ -27,12 +27,12 @@ class _HomePageState extends State<HomePage> {
     var response = await http.get(Uri.parse('https://authentication-ui.ubi.com/Default/CheckUsernameIsValid?Username='+name));
     if (response.body.contains("not available")) {
       setState(() {
-        availability = "Unavailable";
+        statusText = "Unavailable";
         statusColor = Colors.redAccent;
       });
     } else {
       setState(() {
-        availability = "Available";
+        statusText = "Available";
         statusColor = Colors.greenAccent;
       });
     }
@@ -54,13 +54,12 @@ class _HomePageState extends State<HomePage> {
     )
   );
 
-
   Widget nameStatusCircle() => Container(
     margin: const EdgeInsets.only(bottom: 50, top: 20),
     height: 200,
     width: 200,
     child: Container(
-      child: Text(availability, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Poppins', color: statusColor, fontSize: 22)),
+      child: Text(statusText, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Poppins', color: statusColor, fontSize: 22)),
       padding: const EdgeInsets.only(top: 85),
     ),
     decoration: BoxDecoration(
