@@ -17,6 +17,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
     home: const HomePage(),
+    title: 'Ubisoft Name Checker',
     theme: ThemeData.dark().copyWith(
       scaffoldBackgroundColor: backgroundColor,
       textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(bodyColor: Colors.white),

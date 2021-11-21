@@ -77,6 +77,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
+    title: 'Ubisoft Name Checker',
     home: Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
