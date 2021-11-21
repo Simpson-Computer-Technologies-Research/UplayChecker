@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import '../widgets/constants.dart';
+import '../constants.dart';
 
 // Home Page (Create State)
 class HomePage extends StatefulWidget {
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       onChanged: (String name) => nameHttpRequest(name),
       style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Poppins', color: Colors.white, fontSize: 22),
       decoration: InputDecoration(
-        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: primaryColor)),
+        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: primaryColor, width: 2)),
         border: UnderlineInputBorder(borderSide: BorderSide(color: primaryColor)),
         prefixIcon: const Icon(Icons.alternate_email_rounded, color: primaryColor),
         labelText: "Username",
