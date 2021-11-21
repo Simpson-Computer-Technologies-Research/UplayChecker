@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import '../constants.dart';
+import '../main.dart';
 
 // Home Page (Create State)
 class HomePage extends StatefulWidget {
@@ -20,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void dispose() {
     _controller.dispose();
-    super.dispose(); 
+    super.dispose();
   }
 
   Future nameHttpRequest(String name) async {
@@ -50,14 +49,13 @@ class _HomePageState extends State<HomePage> {
       controller: _controller,
       textInputAction: TextInputAction.go,
       onChanged: (String name) => nameHttpRequest(name),
-      style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Poppins', color: Colors.white, fontSize: 22),
+      style: const TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Poppins', color: Colors.white, fontSize: 22),
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: statusColor, width: 2)),
         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: statusColor, width: 2)),
-        border: UnderlineInputBorder(borderSide: BorderSide(color: statusColor)),
         prefixIcon: Icon(Icons.alternate_email_rounded, color: statusColor),
         labelText: "Username",
-        labelStyle: TextStyle(fontSize: 20.0, color: Colors.white),
+        labelStyle: const TextStyle(fontSize: 20.0, color: Colors.white),
       )
     )
   );
@@ -83,27 +81,20 @@ class _HomePageState extends State<HomePage> {
     home: Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
-      body: Column (
-        children: <Widget>[
-          Container(
-            alignment: Alignment.topLeft,
-            child: Column(
-              children: <Widget>[
-                nameStatusCircle(),
-                nameInputField()
-              ]
-            ),
-            margin: const EdgeInsets.only(top: 50, bottom: 10, right: 10, left: 10),
-            padding: const EdgeInsets.all(25),
-            height: 600,
-            width: 500,
-            decoration: BoxDecoration(
-              color: secondaryColor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          )
-        ]
-      ),
+      body: Container(
+        alignment: Alignment.topLeft,
+        child: Column(
+          children: <Widget>[
+            nameStatusCircle(),
+            nameInputField()
+          ]
+        ),
+        decoration: BoxDecoration(color: secondaryColor, borderRadius: BorderRadius.circular(10)),
+        margin: const EdgeInsets.only(top: 50, bottom: 10, right: 10, left: 10),
+        padding: const EdgeInsets.all(25),
+        height: 600,
+        width: 500
+      )
     )
   );
 }

@@ -1,8 +1,11 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart';
 import 'pages/home.dart';
+
+// Constant Colors
+const primaryColor = Color(0xFF2697FF);
+const secondaryColor = Color(0xFF2A2D3E);
+const backgroundColor = Color(0xFF212332);
 
 void main() {
   runApp(const MyApp());
