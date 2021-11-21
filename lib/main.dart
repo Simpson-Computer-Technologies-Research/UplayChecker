@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
     title: 'Ubisoft Name Checker',
     theme: ThemeData.dark().copyWith(
       scaffoldBackgroundColor: backgroundColor,
-      textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-          .apply(bodyColor: Colors.white),
+      textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(bodyColor: Colors.white),
       canvasColor: secondaryColor,
     ),
   );
