@@ -26,24 +26,23 @@ class _HomePageState extends State<HomePage> {
   Future nameHttpRequest(String name) async {
     var response = await http.get(Uri.parse('https://authentication-ui.ubi.com/Default/CheckUsernameIsValid?Username='+name));
     if (name.isNotEmpty && !response.body.contains("your username is not allowed")) {
-      debugPrint(response.body);
       if (response.body.contains("not available")) {
         setState(() {
           statusText = "Unavailable";
           statusColor = Colors.redAccent;
-        });
+        }); return;
       } else if (response.body.contains("true")){
         setState(() {
           statusText = "Available";
           statusColor = Colors.greenAccent;
-        });
+        }); return;
       }
     } else {
       setState(() {
         statusColor = Colors.redAccent;
         statusText = "Invalid";
       });
-    }
+    } return;
   }
 
   Widget nameInputField() => Expanded(
