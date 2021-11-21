@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           statusText = "Unavailable";
           statusColor = Colors.redAccent;
         });
-      } else {
+      } else if (response.body.contains("true")){
         setState(() {
           statusText = "Available";
           statusColor = Colors.greenAccent;
