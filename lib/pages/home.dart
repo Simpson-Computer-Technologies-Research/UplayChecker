@@ -81,30 +81,29 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) => MaterialApp(
     title: 'Ubisoft Name Checker',
     home: Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
-      body: SingleChildScrollView(
-        child: Column (
-          children: <Widget>[
-            Container(
-              alignment: Alignment.topLeft,
-              child: Column(
-                children: <Widget>[
-                  nameStatusCircle(),
-                  nameInputField()
-                ]
-              ),
-              margin: const EdgeInsets.only(top: 50, bottom: 10, right: 10, left: 10),
-              padding: const EdgeInsets.all(25),
-              height: 600,
-              width: 500,
-              decoration: BoxDecoration(
-                color: secondaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-            )
-          ]
-        ),
-      )  
+      body: Column (
+        children: <Widget>[
+          Container(
+            alignment: Alignment.topLeft,
+            child: Column(
+              children: <Widget>[
+                nameStatusCircle(),
+                nameInputField()
+              ]
+            ),
+            margin: const EdgeInsets.only(top: 50, bottom: 10, right: 10, left: 10),
+            padding: const EdgeInsets.all(25),
+            height: 600,
+            width: 500,
+            decoration: BoxDecoration(
+              color: secondaryColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+          )
+        ]
+      ),
     )
   );
 }
