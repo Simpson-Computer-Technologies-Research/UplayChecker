@@ -23,13 +23,10 @@ class _HomePageState extends State<HomePage> {
     super.dispose(); 
   }
 
-  bool validName(name) {
-    return !["1","2","3","4","5","6","7","8","9","0",".","-","_"].contains(name[0]);
-  }
-
   Future nameHttpRequest(String name) async {
-    if (name.isNotEmpty && validName(name)) {
-      var response = await http.get(Uri.parse('https://authentication-ui.ubi.com/Default/CheckUsernameIsValid?Username='+name));
+    var response = await http.get(Uri.parse('https://authentication-ui.ubi.com/Default/CheckUsernameIsValid?Username='+name));
+    if (name.isNotEmpty && !response.body.contains("your username is not allowed")) {
+      debugPrint(response.body);
       if (response.body.contains("not available")) {
         setState(() {
           statusText = "Unavailable";
@@ -43,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       }
     } else {
       setState(() {
-        statusColor = primaryColor;
+        statusColor = Colors.redAccent;
         statusText = "Invalid";
       });
     }
