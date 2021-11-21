@@ -30,19 +30,19 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           statusText = "Unavailable";
           statusColor = Colors.redAccent;
-        });
+        }); return;
       } else if (response.body.contains("true")){
         setState(() {
           statusText = "Available";
           statusColor = Colors.greenAccent;
-        });
+        }); return;
       }
     } else {
       setState(() {
         statusColor = Colors.redAccent;
         statusText = "Invalid";
       });
-    }
+    } return;
   }
 
   Widget nameInputField() => Expanded(
