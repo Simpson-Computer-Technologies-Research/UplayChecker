@@ -82,7 +82,6 @@ class _HomePageState extends State<HomePage> {
       resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Container(
-        alignment: Alignment.topLeft,
         child: Column(
           children: <Widget>[
             nameStatusCircle(),
