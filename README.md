@@ -1,4 +1,4 @@
-# Flutter Modern UI
-> This was a quick project that I made using Flutter. Feel free to use it as a base file for your projects!
+# Flutter Ubisoft Name Checker
+> This was a quick project that I made using Flutter.
 
-https://user-images.githubusercontent.com/75189508/142666993-68edf0a6-0677-49ac-9fc7-227562c86498.mp4
+https://user-images.githubusercontent.com/75189508/142770285-00297fc3-aa46-441c-9047-946ca83c0563.mp4
