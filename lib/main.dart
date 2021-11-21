@@ -8,11 +8,11 @@ const secondaryColor = Color(0xFF2A2D3E);
 const backgroundColor = Color(0xFF212332);
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => MaterialApp(
