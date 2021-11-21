@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 // Home Page (Widget)
 class _HomePageState extends State<HomePage> {
   final TextEditingController _controller = TextEditingController();
-  Color statusColor = Colors.white;
+  Color statusColor = primaryColor;
   String statusText = ". . .";
 
   @override
@@ -23,17 +23,28 @@ class _HomePageState extends State<HomePage> {
     super.dispose(); 
   }
 
+  bool validName(name) {
+    return !["1","2","3","4","5","6","7","8","9","0",".","-","_"].contains(name[0]);
+  }
+
   Future nameHttpRequest(String name) async {
-    var response = await http.get(Uri.parse('https://authentication-ui.ubi.com/Default/CheckUsernameIsValid?Username='+name));
-    if (response.body.contains("not available")) {
-      setState(() {
-        statusText = "Unavailable";
-        statusColor = Colors.redAccent;
-      });
+    if (name.isNotEmpty && validName(name)) {
+      var response = await http.get(Uri.parse('https://authentication-ui.ubi.com/Default/CheckUsernameIsValid?Username='+name));
+      if (response.body.contains("not available")) {
+        setState(() {
+          statusText = "Unavailable";
+          statusColor = Colors.redAccent;
+        });
+      } else {
+        setState(() {
+          statusText = "Available";
+          statusColor = Colors.greenAccent;
+        });
+      }
     } else {
       setState(() {
-        statusText = "Available";
-        statusColor = Colors.greenAccent;
+        statusColor = primaryColor;
+        statusText = "Invalid";
       });
     }
   }
@@ -45,9 +56,10 @@ class _HomePageState extends State<HomePage> {
       onChanged: (String name) => nameHttpRequest(name),
       style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Poppins', color: Colors.white, fontSize: 22),
       decoration: InputDecoration(
-        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: primaryColor, width: 2)),
-        border: UnderlineInputBorder(borderSide: BorderSide(color: primaryColor)),
-        prefixIcon: const Icon(Icons.alternate_email_rounded, color: primaryColor),
+        focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: statusColor, width: 2)),
+        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: statusColor, width: 2)),
+        border: UnderlineInputBorder(borderSide: BorderSide(color: statusColor)),
+        prefixIcon: Icon(Icons.alternate_email_rounded, color: statusColor),
         labelText: "Username",
         labelStyle: TextStyle(fontSize: 20.0, color: Colors.white),
       )
@@ -77,7 +89,6 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column (
           children: <Widget>[
-            topMenuBox("   Ubisoft Name Checker", Icons.all_inclusive_rounded),
             Container(
               alignment: Alignment.topLeft,
               child: Column(
@@ -86,9 +97,9 @@ class _HomePageState extends State<HomePage> {
                   nameInputField()
                 ]
               ),
-              margin: const EdgeInsets.only(top: 5, bottom: 10, right: 10, left: 10),
+              margin: const EdgeInsets.only(top: 50, bottom: 10, right: 10, left: 10),
               padding: const EdgeInsets.all(25),
-              height: 500,
+              height: 600,
               width: 500,
               decoration: BoxDecoration(
                 color: secondaryColor,
