@@ -1,8 +1,4 @@
-# Flutter Ubisoft Name Checker
-
-![Stars](https://img.shields.io/github/stars/realTristan/
-Flutter_Ubisoft_Name_Checker?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/
-Flutter_Ubisoft_Name_Checker?label=Watchers)
+# Flutter Ubisoft Name Checker ![Stars](https://img.shields.io/github/stars/realTristan/Flutter_Ubisoft_Name_Checker?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/Flutter_Ubisoft_Name_Checker?label=Watchers)
 ![ubisoft-logo-head-banner-2017_0903D4000000865632](https://user-images.githubusercontent.com/75189508/186450611-cb2e9248-8e5a-46b8-9908-d7dd54e2fb18.jpg)
 
 # About
