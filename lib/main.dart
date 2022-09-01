@@ -7,13 +7,16 @@ const primaryColor = Color(0xFF2697FF);
 const secondaryColor = Color(0xFF2A2D3E);
 const backgroundColor = Color(0xFF212332);
 
+// Main function
 void main() {
   runApp(const App());
 }
 
+// App Widget
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
+  // Build the app
   @override
   Widget build(BuildContext context) => MaterialApp(
     home: const HomePage(),
