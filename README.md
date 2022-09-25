@@ -1,7 +1,10 @@
 # Flutter Ubisoft Name Checker ![Stars](https://img.shields.io/github/stars/realTristan/UplayChecker?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/UplayChecker?label=Watchers)
 ![banner](https://user-images.githubusercontent.com/75189508/192171192-38f7f490-e347-44a8-95c2-20219beaafa8.png)
 
-# Showcase
+<h2>About</h2>
+UplayChecker is an easy to use ubisoft name checker developed for mobile using Flutter. The app uses an old, proxyless endpoint enabling swift name checks.
+
+<h3>Showcase</h3>
 https://user-images.githubusercontent.com/75189508/142772701-78cf1ef9-d012-45c8-b1f7-4aa089a93b92.mp4
 
 # License
