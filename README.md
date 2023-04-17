@@ -1,4 +1,4 @@
-# Ubisoft Name Checker ![Stars](https://img.shields.io/github/stars/realTristan/UplayChecker?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/UplayChecker?label=Watchers)
+# Ubisoft Name Checker ![Stars](https://img.shields.io/github/stars/Simpson-Computer-Technologies-Research/UplayChecker?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/Simpson-Computer-Technologies-Research/UplayChecker?label=Watchers)
 ![banner](https://user-images.githubusercontent.com/75189508/192171192-38f7f490-e347-44a8-95c2-20219beaafa8.png)
 
 <h2>About</h2>
